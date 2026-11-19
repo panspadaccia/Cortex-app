@@ -1,0 +1,55 @@
+/* Concentra+ · css/pessoa2/relogio.css
+   Pessoa 2 · Sessão, bloqueio e conta (histórias 07 a 12 do backlog): aparência do relógio de mesa virtual
+   Integrante: [NOME] · GitHub: [@usuario] */
+/* ---------- watch ---------- */
+/* RESPONSÁVEL (parte técnica): Pessoa 2 · Relógio e início */
+.watch-area{padding:30px 6px 4px}
+.watch{position:relative;width:300px;height:168px;margin:0 auto;border-radius:36px;background:linear-gradient(160deg,#3a3f44 0%,#24282c 40%,#16191c 100%);box-shadow:inset 0 2px 1px rgba(255,255,255,.12),inset 0 -6px 14px rgba(0,0,0,.45),0 22px 40px rgba(10,20,30,.35),0 4px 10px rgba(10,20,30,.2);transition:transform .15s}
+.watch.vib{animation:vib .08s linear 8}
+@keyframes vib{0%{transform:translateX(-1.5px)}50%{transform:translateX(1.5px)}100%{transform:translateX(0)}}
+.wbtns{position:absolute;top:-18px;left:50%;transform:translateX(-50%);display:flex;gap:9px}
+.wbtn{width:40px;height:24px;border-radius:12px 12px 6px 6px;background:linear-gradient(#4a5056,#2b2f33);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 3px 0 #15181a,0 4px 8px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;color:#c9d1d6;transition:transform .08s,box-shadow .08s;position:relative}
+.wbtn:active,.wbtn.press{transform:translateY(3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 #15181a}
+.wbtn.c{width:46px;background:linear-gradient(#55616a,#2e353b)}
+.wbtn .tip{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:600;color:#6b7280;white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none}
+.wbtn:hover .tip{opacity:1}
+.wface{position:absolute;inset:18px 44px 18px 18px;border-radius:20px;background:radial-gradient(120% 140% at 30% 10%,#15191c,#050607 70%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),inset 0 4px 14px rgba(0,0,0,.8);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.wface::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,0) 38%);pointer-events:none}
+.wgrill{position:absolute;right:14px;top:50%;transform:translateY(-50%);display:grid;grid-template-columns:repeat(3,4px);gap:4px}
+.wgrill i{width:4px;height:4px;border-radius:50%;background:#0c0e10;box-shadow:inset 0 1px 1px rgba(0,0,0,.8),0 1px 0 rgba(255,255,255,.06)}
+.led{font-family:"Share Tech Mono",ui-monospace,monospace;color:#f4fbff;text-shadow:0 0 8px rgba(220,245,255,.55),0 0 2px rgba(255,255,255,.9);letter-spacing:2px;line-height:1}
+.led.big{font-size:54px}
+.led.mid{font-size:30px}
+.led.sm{font-size:12px;letter-spacing:1.5px}
+.wtop{position:absolute;top:9px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:center;color:#cfe;opacity:.85}
+.wtop .ico{display:flex;gap:6px;align-items:center}
+.wpill{margin-top:8px;font-size:9.5px;font-weight:700;letter-spacing:1.2px;padding:3px 9px;border-radius:9px;background:#1f7a46;color:#e9fff1;box-shadow:0 0 10px rgba(46,200,110,.45)}
+.wpill.pause{background:#8a5d12;box-shadow:0 0 10px rgba(240,170,60,.4)}
+.wpill.rest{background:#1d5a63;box-shadow:0 0 10px rgba(79,179,191,.4)}
+.wpill.off{background:#333;box-shadow:none;color:#bbb}
+.wbar{position:absolute;left:14px;right:14px;bottom:9px;height:3px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
+.wbar i{display:block;height:100%;background:#34d27b;box-shadow:0 0 6px #34d27b}
+.blink{animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
+.wover{position:absolute;inset:0;background:rgba(5,6,7,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;z-index:3}
+.volbars{display:flex;gap:3px;align-items:flex-end;height:18px}
+.volbars i{width:6px;background:rgba(255,255,255,.18);border-radius:1px}
+.volbars i.on{background:#f4fbff;box-shadow:0 0 5px rgba(220,245,255,.7)}
+.wface.offscreen *{visibility:hidden}
+.wcable{width:70px;height:26px;margin:-2px auto 0;border-left:3px solid #f2a93b;border-bottom:3px solid #f2a93b;border-bottom-left-radius:14px;transform:translateX(-40px);opacity:0;transition:opacity .3s}
+.wcable.on{opacity:1}
+.wlabel{text-align:center;font-size:12px;color:#6b7280;margin-top:8px}
+
+/* env panel */
+.env{background:rgba(255,255,255,.75);backdrop-filter:blur(8px);border:1px solid #e3e7eb;border-radius:20px;padding:6px 16px}
+.erow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #edf0f2;font-size:13.5px;color:#1b1f23}
+.erow:last-child{border-bottom:0}
+.erow .lbl{display:flex;flex-direction:column;gap:2px}
+.erow .lbl small{color:#8a929b;font-size:11.5px}
+.erow input[type=range]{width:120px;accent-color:#1f6f78}
+.eseg{display:flex;background:#eef1f3;border-radius:9px;padding:2px}
+.eseg button{font-size:12px;font-weight:600;padding:5px 9px;border-radius:7px;color:#5b636b}
+.eseg button.on{background:#fff;color:#1f6f78;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.ebtn{font-size:12.5px;font-weight:600;color:#1f6f78;padding:6px 10px;border-radius:9px;background:#e3f0f1}
+.ebtn.red{color:#c53a3a;background:#fbeaea}
+
