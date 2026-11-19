@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+  CONCENTRA+ · protótipo front-end (arquivo principal)
+  Cada arquivo do projeto tem UM responsável, indicado no comentário do topo dele.
+  Os 30 itens do backlog foram divididos em 5 blocos de 6 histórias (uma pessoa por bloco).
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concentra+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/pessoa3/tema.css">
+<link rel="stylesheet" href="css/pessoa5/base.css">
+<link rel="stylesheet" href="css/pessoa2/relogio.css">
+<link rel="stylesheet" href="css/pessoa3/telas-base-1.css">
+<link rel="stylesheet" href="css/pessoa4/telas-base-2.css">
+</head>
+<body>
+<div class="stage">
+  <div class="phone" id="phone">
+    <div class="screen-wrap">
+      <div class="sbar"><span id="sbtime">9:41</span><span class="r"><span id="sbbt"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg></span><span id="sbwifi"></span><span style="display:inline-flex"><svg width="25" height="12" viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="16" height="8" rx="1.6" fill="currentColor"/><path d="M23 4v4" stroke="currentColor" stroke-width="1.5" opacity=".45" stroke-linecap="round"/></svg></span></span></div>
+      <div id="screen"></div>
+      <div id="push"></div>
+      <div id="toast"></div>
+      <div id="block"></div>
+      <div class="homebar"></div>
+    </div>
+  </div>
+
+  <aside class="side" aria-label="Relógio Concentra+ e simulador">
+    <button class="side-close" data-env="close" aria-label="Fechar">✕</button>
+    <div>
+      <h4><span class="dot" id="wdot"></span>Seu Concentra+</h4>
+      <div class="watch-area">
+        <div class="watch" id="watch">
+          <div class="wbtns">
+            <button class="wbtn" data-w="music" aria-label="Música"><span class="tip">Música</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></button>
+            <button class="wbtn" data-w="vol-" aria-label="Volume menos"><span class="tip">Volume –</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
+            <button class="wbtn c" data-w="center" aria-label="Iniciar, pausar ou retomar"><span class="tip">Iniciar / pausar · segure p/ encerrar</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6v12l8-6z" fill="currentColor" stroke="none"/><path d="M15 6v12M20 6v12" stroke-width="2.6"/></svg></button>
+            <button class="wbtn" data-w="vol+" aria-label="Volume mais"><span class="tip">Volume +</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            <button class="wbtn" data-w="telas" aria-label="Trocar tela"><span class="tip">Telas</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7 9 5-5 5 5M7 15l5 5 5-5"/></svg></button>
+          </div>
+          <div class="wface" id="wface"></div>
+          <div class="wgrill"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="wcable" id="wcable"></div>
+        <p class="wlabel" id="wlab"></p>
+      </div>
+      <p class="hint">Os 5 botões funcionam como no relógio de mesa: o do centro inicia, pausa e retoma o timer (segure para encerrar). <b>Telas</b> alterna hora, timer, meta e bateria.</p>
+    </div>
+
+    <div>
+      <h4>Simulador do ambiente</h4>
+      <div class="env">
+        <div class="erow"><span class="lbl">Bluetooth do celular<small>Conexão com o relógio</small></span><button class="tg" id="env-bt" data-env="bt" style="--track:#d9dee2;--pri:#1f6f78"></button></div>
+        <div class="erow"><span class="lbl">Internet<small>Recuperação, relatórios, agenda</small></span><button class="tg" id="env-net" data-env="net" style="--track:#d9dee2;--pri:#1f6f78"></button></div>
+        <div class="erow"><span class="lbl">Bateria do relógio <b id="env-batv">78%</b></span><span class="row" style="gap:8px"><input type="range" id="env-bat" min="0" max="100" value="78"><button class="ebtn" data-env="charge">Ligar cabo</button></span></div>
+        <div class="erow"><span class="lbl">Velocidade do tempo<small>Para não esperar 25 min</small></span><span class="eseg"><button data-env="speed" data-speed="1">1×</button><button data-env="speed" data-speed="10">10×</button><button data-env="speed" data-speed="60">60×</button></span></div>
+        <div class="erow"><span class="lbl">Abrir app no celular<small>Testa o bloqueio durante o foco</small></span><span class="row" style="gap:6px"><select id="env-app" style="font-size:12.5px;border:1px solid #dfe3e7;border-radius:8px;padding:5px;background:#fff"><option value="instagram">Instagram</option><option value="tiktok">TikTok</option><option value="youtube">YouTube</option><option value="whatsapp">WhatsApp</option><option value="jogos">Jogos</option><option value="noticias">Notícias</option></select><button class="ebtn" data-env="openapp">Abrir</button></span></div>
+        <div class="erow"><span class="lbl">Falha no pagamento<small>Assinatura pendente</small></span><button class="ebtn" data-env="payfail">Simular</button></div>
+        <div class="erow"><span class="lbl">Recomeçar o teste<small>Volta para a tela de boas-vindas</small></span><button class="ebtn red" data-env="reset">Reiniciar</button></div>
+      </div>
+      <p class="hint">Este painel é só do teste e não faz parte do app. Para entrar como a usuária Ana, use “Já tenho conta” com qualquer senha de 8 caracteres.</p>
+    </div>
+  </aside>
+  <button class="fab" id="fab" aria-label="Abrir relógio e simulador"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11" rx="3"/></svg></button>
+</div>
+<script src="js/pessoa5/01-base.js"></script>
+<script src="js/pessoa4/historico-dados.js"></script>
+<script src="js/pessoa3/02-estado-e-navegacao.js"></script>
+<script src="js/pessoa3/tema.js"></script>
+<script src="js/pessoa5/acoes.js"></script>
+<script src="js/pessoa1/telas.js"></script>
+<script src="js/pessoa2/telas.js"></script>
+<script src="js/pessoa3/telas.js"></script>
+<script src="js/pessoa4/telas.js"></script>
+<script src="js/pessoa5/telas.js"></script>
+<script src="js/pessoa2/motor-da-sessao.js"></script>
+<script src="js/pessoa2/relogio-virtual.js"></script>
+<script src="js/pessoa5/painel-moderador.js"></script>
+<script src="js/pessoa5/audio.js"></script>
+<script src="js/pessoa1/pdf-relatorio.js"></script>
+<script src="js/pessoa4/iniciar.js"></script>
+</body>
+</html>
