@@ -1,0 +1,19 @@
+/* Concentra+ · css/pessoa3/tema.css
+   Pessoa 3 · Início, metas e tema (histórias 13 a 18 do backlog): cores e tema claro/escuro (.dark)
+   Integrante: THAIS · GitHub: @thaisrpc */
+:root{
+  --bg:#f7f8fa;--card:#fff;--line:#e6e9ed;--line2:#eef0f3;--text:#1b1f23;--muted:#6b7280;--muted2:#9aa1ab;
+  --pri:#1f6f78;--pri-ink:#fff;--pri-soft:#e3f0f1;--pri-soft2:#cfe5e7;
+  --orange:#f2a93b;--orange-soft:#fdf3e3;--orange-line:#f2c879;--orange-ink:#8a5a12;
+  --green:#2e9e5b;--green-soft:#e4f4ea;--red:#d64545;--red-soft:#fbeaea;--red-line:#f0b4b4;
+  --purple:#7b5ea7;--brown:#b06a3b;
+  --scrim:rgba(20,26,30,.55);--shadow:0 1px 2px rgba(16,24,40,.04),0 1px 3px rgba(16,24,40,.06);
+  --input:#fff;--track:#e3e6ea;
+}
+.dark{
+  --bg:#0f1417;--card:#1a2126;--line:#2a333a;--line2:#222a30;--text:#eef2f4;--muted:#9aa4ad;--muted2:#6f7a83;
+  --pri:#4fb3bf;--pri-ink:#0f1417;--pri-soft:#1d363a;--pri-soft2:#24464b;
+  --orange:#f0b250;--orange-soft:#2a2418;--orange-line:#6b5222;--orange-ink:#f0c47a;
+  --green:#3fbf75;--green-soft:#173326;--red:#ef6b6b;--red-soft:#321c1e;--red-line:#6b2c2e;
+  --scrim:rgba(0,0,0,.6);--shadow:none;--input:#161c20;--track:#2c353c;
+}
